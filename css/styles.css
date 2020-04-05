@@ -1,0 +1,750 @@
+:root {
+  background-color: lightblue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 200px 100px 1fr;
+  grid-template-areas: "head" "navi" "main";
+}
+.container header {
+  grid-area: head;
+  background-color: grey;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container header .profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 60px;
+  position: absolute;
+  top: 10px;
+  right: -50px;
+}
+.container header .nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+.container .notifications-bell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0 auto;
+}
+.container #notification-bell {
+  position: relative;
+  width: 60px;
+  margin: 0 auto 0 auto;
+}
+.container #notification-bell .marker {
+  position: absolute;
+  top: -1px;
+  right: 5px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+}
+.container .svg-default {
+  fill: green;
+  transition: fill;
+}
+.container .svg-default:hover {
+  transition: 1s;
+  fill: red;
+}
+.container .svg-change {
+  fill: white;
+  transition: fill;
+}
+.container .svg-change:hover {
+  transition: 1s;
+  fill: indigo;
+}
+.container nav {
+  grid-area: navi;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-template-rows: 100px;
+  grid-column-gap: 10px;
+  background-color: darkseagreen;
+  align-items: center;
+}
+.container nav a {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 0 auto;
+}
+.container nav a .nav-icon {
+  fill: white;
+  transition: all 1s;
+}
+.container nav a .nav-icon:hover {
+  fill: #4ae4ff;
+}
+.container main {
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-areas: "section-1" "fifty-fifty" "section-4" "twenty-five";
+  background-color: #a5f5f8;
+}
+.container main .section-1 {
+  grid-area: section-1;
+  display: grid;
+  grid-template-rows: 120px minmax(60px, 1fr) minmax(300px, 3fr);
+  grid-template-areas: "main-header" "alert" "traffic";
+  margin: 0 0 60px 0;
+}
+.container main .section-1 .main-header {
+  grid-area: main-header;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: burlywood;
+}
+.container main .section-1 .main-header h2 {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  padding-top: 16px;
+  margin: 0 auto 0 auto;
+  background-color: cornsilk;
+}
+.container main .section-1 .main-header .main-header-search {
+  margin-top: 0.5em;
+}
+.container main .section-1 .main-header .main-header-search input {
+  width: 260px;
+  height: 30px;
+  background-image: url(../web_app_dashboard_v3.1/images/mag.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  border-radius: 7px;
+}
+.container main .section-1 .alert {
+  grid-area: alert;
+  margin: 20px auto 0 auto;
+  width: 90%;
+  height: 70%;
+  background-color: #5bdb5b;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 5px;
+  overflow: hidden;
+  text-align: center;
+  display: block;
+}
+.container main .section-1 .alert .alert-banner {
+  position: relative;
+}
+.container main .section-1 .alert .alert-banner .alert-message {
+  margin-top: 10px;
+}
+.container main .section-1 .alert .alert-banner .alert-banner-close {
+  text-align: center;
+  margin: 5px 0 0 auto;
+  padding-top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid red;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 13px;
+}
+.container main .section-1 .alert .alert-banner .alert-banner-close:hover {
+  font-size: 1.3em;
+  border: 3px solid white;
+  padding-top: 2px;
+  cursor: pointer;
+}
+.container main .section-1 .traffic {
+  grid-area: traffic;
+  display: grid;
+  width: 95%;
+  margin: 0 auto 0 auto;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "traffic-header" "widget-container-full";
+}
+.container main .section-1 .traffic .traffic-header {
+  display: flex;
+  grid-area: traffic-header;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto 0 auto;
+}
+.container main .section-1 .traffic .traffic-header h3 {
+  margin-right: auto;
+}
+.container main .section-1 .traffic .traffic-header .traffic-nav {
+  display: flex;
+  list-style-type: none;
+}
+.container main .section-1 .traffic .traffic-header .traffic-nav .traffic-nav-link {
+  margin-right: 8px;
+  padding: 5px;
+}
+.container main .section-1 .traffic .traffic-header .traffic-nav .active {
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.container main .section-1 .traffic .widget-container-full {
+  grid-area: widget-container-full;
+}
+.container main .section-2 {
+  display: grid;
+  grid-area: section-2;
+  grid-template-rows: 1fr;
+  grid-template-areas: "daily-traffic";
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .section-2 .daily {
+  grid-area: daily-traffic;
+}
+.container main .section-3 {
+  display: grid;
+  grid-area: section-3;
+  grid-template-rows: 1fr;
+  grid-template-areas: "mobile";
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .section-3 .mobile {
+  grid-area: mobile;
+}
+.container main .section-4 {
+  grid-area: section-4;
+  display: grid;
+  grid-template-rows: 60px repeat(3, minmax(120px, 1fr));
+  grid-template-areas: "social-headline" "twitter" "facebook" "google";
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .section-4 .social-headline {
+  grid-area: social-headline;
+}
+.container main .section-4 .social-icon-facebook {
+  width: 30px;
+  height: 30px;
+}
+.container main .section-4 .social-card {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  width: 70%;
+  margin: 0 auto 0 auto;
+  background-color: darkkhaki;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.container main .section-4 .social-card .social-icon {
+  width: 60px;
+  height: 60px;
+  background-color: lightblue;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+.container main .section-4 .social-card .social-icon .social-logo {
+  margin: 15px auto 0 15px;
+}
+.container main .section-4 .social-card .social-card-1 {
+  grid-area: twitter;
+}
+.container main .section-4 .social-card .social-card-2 {
+  grid-area: facebook;
+}
+.container main .section-4 .social-card .social-card-3 {
+  grid-area: google;
+}
+.container main .section-4 .social-card .social-data {
+  margin-left: 1em;
+}
+.container main .section-4 .social-card .social-data h4 {
+  margin: 0;
+}
+.container main .section-4 .social-card .social-data p {
+  margin: 0;
+  font-size: 2.2em;
+}
+.container main .twentyfive {
+  grid-area: twenty-five;
+}
+.container main .twentyfive .section-5 {
+  grid-area: section-5;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "head" "new-members";
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .twentyfive .section-5 .new-mem-headline {
+  grid-area: head;
+  width: 95%;
+  margin: 0 auto 0 auto;
+}
+.container main .twentyfive .section-5 .new-members {
+  grid-area: new-members;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+.container main .twentyfive .section-5 .new-members .member {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  height: 60px;
+}
+.container main .twentyfive .section-5 .new-members .member .member-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.container main .twentyfive .section-5 .new-members .member .member-name {
+  margin-right: auto;
+}
+.container main .twentyfive .section-5 .new-members .member .member-name p {
+  margin: 0;
+}
+.container main .twentyfive .section-6 {
+  grid-area: section-6;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "activity-head" "recent-activity";
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .twentyfive .section-6 .activity-head {
+  grid-area: activity-head;
+}
+.container main .twentyfive .section-6 .recent-activity {
+  grid-area: recent-activity;
+}
+.container main .twentyfive .section-6 .recent-activity .member {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  height: 60px;
+}
+.container main .twentyfive .section-6 .recent-activity .member .member-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.container main .twentyfive .section-6 .recent-activity .member .member-name {
+  margin-right: auto;
+}
+.container main .twentyfive .section-6 .recent-activity .member .member-name p {
+  margin: 0;
+}
+.container main .twentyfive .section-7 {
+  grid-area: section-7;
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  width: 95%;
+  margin: 0 auto 60px auto;
+}
+.container main .twentyfive .section-7 .widget-container {
+  margin-top: 28px;
+}
+.container main .twentyfive .section-7 .widget-container .form-field {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.container main .twentyfive .section-7 .widget-container .form-area {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.container main .twentyfive .section-7 .widget-container .button-primary {
+  align-self: flex-end;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: darkcyan;
+}
+.container main .twentyfive .section-8 {
+  grid-area: section-8;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 320px;
+  margin: 0 auto 60px auto;
+}
+.container main .twentyfive .section-8 .slider-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+.container main .twentyfive .section-8 .slider-container p {
+  width: 60%;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-checkbox {
+  display: none;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-inner:before, .container main .twentyfive .section-8 .slider-container .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #34A7C1;
+  color: #FFFFFF;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.container main .twentyfive .section-8 .slider-container .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+.container main .twentyfive .section-8 .slider-container-1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 18px auto;
+}
+.container main .twentyfive .section-8 .slider-container-1 p {
+  width: 60%;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch1 {
+  position: relative;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-checkbox1 {
+  display: none;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-label1 {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-inner1 {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-inner1:before, .container main .twentyfive .section-8 .slider-container-1 .onoffswitch-inner1:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-inner1:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #34A7C1;
+  color: #FFFFFF;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-inner1:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-switch1 {
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-checkbox1:checked + .onoffswitch-label1 .onoffswitch-inner1 {
+  margin-left: 0;
+}
+.container main .twentyfive .section-8 .slider-container-1 .onoffswitch-checkbox1:checked + .onoffswitch-label1 .onoffswitch-switch1 {
+  right: 0px;
+}
+.container main .twentyfive .section-8 .form-field {
+  height: 30px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+.container main .twentyfive .section-8 .settings-button {
+  display: flex;
+  justify-content: space-between;
+}
+.container main .twentyfive .section-8 .settings-button button {
+  width: 48%;
+  height: 40px;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+}
+.container main .twentyfive .section-8 .settings-button .button-disabled {
+  background-color: dimgray;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: "head head" "navi main";
+    height: 100vh;
+  }
+  .container header {
+    grid-area: head;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: grey;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+  }
+  .container header h1 {
+    margin-right: auto;
+    margin-left: 15px;
+  }
+  .container header .nav-list {
+    display: flex;
+    align-items: center;
+  }
+  .container header .profile-picture {
+    position: static;
+    margin: 0 5px 0 0;
+  }
+  .container header .bell-list-item {
+    margin-right: 15px;
+    padding-right: 10px;
+    border-right: 1px solid black;
+  }
+  .container header .name {
+    margin-right: 20px;
+  }
+  .container nav {
+    grid-area: navi;
+    display: flex;
+    flex-direction: column;
+    background-color: darkseagreen;
+    align-items: center;
+  }
+  .container nav a {
+    width: 40px;
+    height: 40px;
+    margin: 40px auto 0 auto;
+  }
+  .container main {
+    grid-area: main;
+    grid-template-rows: minmax(400px, 1fr) minmax(200px, 500px) minmax(100px, 400px) minmax(500px, 1fr);
+    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-areas: "section-1" "fifty-fifty" "section-4" "twentyfive";
+    background-color: #fddbc5;
+  }
+  .container main .section-1 {
+    grid-area: section-1;
+    display: grid;
+    grid-template-rows: 120px minmax(60px, 1fr) minmax(300px, 3fr);
+    grid-template-areas: "main-header" "alert" "traffic";
+  }
+  .container main .section-1 .main-header {
+    grid-area: main-header;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "h2 searcher";
+    background-color: burlywood;
+  }
+  .container main .section-1 .main-header h2 {
+    grid-area: h2;
+    height: 100%;
+    background-color: cornsilk;
+    padding-top: 46.2px;
+  }
+  .container main .section-1 .main-header .main-header-search {
+    grid-area: searcher;
+    justify-content: flex-end;
+  }
+  .container main .section-1 .main-header .main-header-search input {
+    float: right;
+    margin-right: 35px;
+    width: 200px;
+    height: 40px;
+    background-image: url(../web_app_dashboard_v3.1/images/mag.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    border-radius: 7px;
+  }
+  .container main .section-1 .alert {
+    grid-area: alert;
+    margin: 20px auto;
+    width: 90%;
+    background-color: #5bdb5b;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px;
+  }
+  .container main .section-1 .alert .alert-banner {
+    position: relative;
+  }
+  .container main .section-1 .alert .alert-banner .alert-message {
+    margin-top: 10px;
+  }
+  .container main .section-1 .alert .alert-banner .alert-banner-close {
+    text-align: center;
+    margin: 5px 0 0 auto;
+    padding-top: 8px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid red;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 40px;
+  }
+  .container main .section-1 .alert .alert-banner .alert-banner-close:hover {
+    font-size: 1.3em;
+    border: 3px solid white;
+    padding-top: 2px;
+    cursor: pointer;
+  }
+  .container main .section-1 .traffic {
+    grid-area: traffic;
+    display: grid;
+    width: 90%;
+    margin: 0 auto 0 auto;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: "traffic-header" "widget-container-full";
+  }
+  .container main .section-1 .traffic .traffic-header {
+    display: flex;
+    grid-area: traffic-header;
+    align-items: center;
+  }
+  .container main .section-1 .traffic .traffic-header h3 {
+    margin-right: auto;
+  }
+  .container main .section-1 .traffic .traffic-header .traffic-nav {
+    display: flex;
+    list-style-type: none;
+  }
+  .container main .section-1 .traffic .traffic-header .traffic-nav .traffic-nav-link {
+    margin-right: 15px;
+  }
+  .container main .section-1 .traffic .widget-container-full {
+    display: block;
+    grid-area: widget-container-full;
+  }
+  .container main .fifty-fifty {
+    grid-area: fifty-fifty;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "section-2 section-3";
+    margin-top: 50px;
+    width: 95%;
+    margin: 0 auto 0 auto;
+  }
+  .container main .section-4 {
+    display: grid;
+    grid-template-rows: 60px minmax(60px, 150px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "social-headline social-headline social-headline" "twitter facebook google";
+    margin-top: 40px;
+  }
+  .container main .section-4 .social-card {
+    width: 90%;
+  }
+  .container main .twentyfive {
+    grid-area: twentyfive;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "section-5 section-6" "section-7 section-8";
+    width: 95%;
+    margin: 0 auto 0 auto;
+  }
+}
+@media (min-width: 1024px) {
+  .container main {
+    background-color: white;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
